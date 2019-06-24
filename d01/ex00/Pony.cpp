@@ -1,39 +1,18 @@
-//
-// Created by Maksim KACHANOVSKIY on 2019-06-24.
-//
-
 #include <iostream>
 #include "Pony.hpp"
 
-Pony::Pony()
-{
-    _name = "Stig";
-    _age = 1;
-    std::cout << "New pony " << getName() << " suddenly born\n";
-}
 
-Pony::Pony(std::string newName, int newAge)
+Pony::Pony(std::string name, int weight)
 {
-    _name = newName;
-    _age = newAge;
-    std::cout << "New pony " << getName() << " suddenly born\n";
+    _name = name;
+    _weight = weight;
+    std::cout << "Pony " << getName() << " born with "
+        << getWeight() << " weight\n";
 }
 
 Pony::~Pony()
 {
-    _age = 0;
-    std::cout << "My pony " << getName() << " двинул кони =(\n\n";
-}
-
-int Pony::getAge() const
-{
-    return (_age);
-}
-
-int Pony::setAge(int n)
-{
-    _age = n;
-    return (_age);
+    std::cout << "Pony " << getName() << " died\n\n";
 }
 
 std::string Pony::getName() const
@@ -41,8 +20,25 @@ std::string Pony::getName() const
     return (_name);
 }
 
-std::string Pony::setName(std::string newName)
+std::string Pony::setName(std::string name)
 {
-    _name = newName;
+    _name = name;
     return (_name);
+}
+
+int Pony::getWeight() const
+{
+    return (_weight);
+}
+
+int Pony::setWeight(int weight)
+{
+    _weight = weight;
+    return (_weight);
+}
+
+void	Pony::sayHello(void) const
+{
+    std::cout << "PONY \nname:\t" << _name
+              << "\nweight:\t" << _weight << "\n";
 }

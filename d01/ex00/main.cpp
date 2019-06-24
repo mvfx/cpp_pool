@@ -7,17 +7,15 @@
 
 void ponyOnTheHeap()
 {
-    Pony *ponyOnStack = new Pony();
-    std::cout << "Pony on heap:\nName -\t" << ponyOnStack->getName()
-              << "\nAge -\t" << ponyOnStack->getAge() << "\n";
-    delete ponyOnStack;
+    Pony *myPony = new Pony("NAME_1", 10);
+    myPony->sayHello();
+    delete myPony;
 }
 
 void ponyOnTheStack()
 {
-    Pony ponyOnHeap("Sleipnir", 10000);
-    std::cout << "Pony on stack:\nName -\t" << ponyOnHeap.getName()
-              << "\nAge -\t" << ponyOnHeap.getAge() << "\n";
+    Pony myPony("NAME_2", 20);
+    myPony.sayHello();
 }
 
 int		main( void )
