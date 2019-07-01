@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkachano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/25 19:58:21 by mkachano          #+#    #+#             */
-/*   Updated: 2019/06/25 19:58:23 by mkachano         ###   ########.fr       */
+/*   Created: 2019/06/28 12:21:24 by mkachano          #+#    #+#             */
+/*   Updated: 2019/06/28 12:21:26 by mkachano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "ClapTrap.hpp"
 
-#include <string>
+#include <iostream>
 
-class Pony
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
+class FragTrap : public ClapTrap
 {
 public:
-    Pony (std::string name, int weight);
-    ~Pony(void);
-    std::string getName() const;
-    std::string setName(std::string name);
-    int     getWeight() const;
-    int     setWeight(int weight);
-    void    sayHello(void) const;
+	FragTrap();
+	FragTrap(const FragTrap& src);
+	FragTrap(std::string name);
+
+    ~FragTrap();
+
+    void 			rangedAttack(std::string const &target);
+    void 			meleeAttack(std::string const &target);
+
+	void 			vaulthunter_dot_exe(const std::string& target);
 
 private:
-    std::string _name;
-    int 		_weight;
+	void	_init(std::string name);
+
 };
+
 
 #endif

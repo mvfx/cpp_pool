@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkachano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/25 19:58:21 by mkachano          #+#    #+#             */
-/*   Updated: 2019/06/25 19:58:23 by mkachano         ###   ########.fr       */
+/*   Created: 2019/06/28 18:49:15 by mkachano          #+#    #+#             */
+/*   Updated: 2019/06/28 18:49:17 by mkachano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include <iostream>
+#include "ClapTrap.hpp"
 
-#include <string>
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-class Pony
+class ScavTrap : public ClapTrap
 {
 public:
-    Pony (std::string name, int weight);
-    ~Pony(void);
-    std::string getName() const;
-    std::string setName(std::string name);
-    int     getWeight() const;
-    int     setWeight(int weight);
-    void    sayHello(void) const;
+	ScavTrap();
+	ScavTrap(const ScavTrap& src);
+	ScavTrap(std::string name);
 
+	~ScavTrap();
+
+	void 			rangedAttack(std::string const &target);
+	void 			meleeAttack(std::string const &target);
+
+	void 			challengeNewcomer(const std::string &target);
+	
 private:
-    std::string _name;
-    int 		_weight;
+	void	_init(std::string name);
+
 };
 
+
 #endif
+

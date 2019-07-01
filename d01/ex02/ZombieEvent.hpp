@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkachano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/25 19:58:21 by mkachano          #+#    #+#             */
-/*   Updated: 2019/06/25 19:58:23 by mkachano         ###   ########.fr       */
+/*   Created: 2019/06/25 19:56:02 by mkachano          #+#    #+#             */
+/*   Updated: 2019/06/25 19:56:04 by mkachano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
 #include <string>
 
-class Pony
+#include "Zombie.hpp"
+
+class ZombieEvent
 {
 public:
-    Pony (std::string name, int weight);
-    ~Pony(void);
-    std::string getName() const;
-    std::string setName(std::string name);
-    int     getWeight() const;
-    int     setWeight(int weight);
-    void    sayHello(void) const;
+    ZombieEvent();
+    ZombieEvent(std::string type);
+    ~ZombieEvent();
+    void	setZombieType(std::string type);
+    Zombie*	newZombie(std::string name);
+    Zombie	randomChump();
 
 private:
-    std::string _name;
-    int 		_weight;
+    std::string	_getRandomName();
+    std::string	_getRandomNameRec(std::string randomName, int nameLength);
+
+    std::string	_zomb_type;
 };
 
-#endif
+#endif // ZOMBIEEVENT_HPP
