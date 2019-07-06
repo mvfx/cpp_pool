@@ -20,7 +20,7 @@ public:
 	Squad(const Squad& src);
 	~Squad();
 
-	Squad&	operator=(const Squad& rhs);
+	Squad&	operator=(const Squad& inst);
 
 	virtual int				getCount() const;
 	virtual ISpaceMarine*	getUnit(int n) const;

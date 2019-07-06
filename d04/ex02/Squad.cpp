@@ -21,12 +21,12 @@ Squad::~Squad()
 	_destroyUnits();
 }
 
-Squad& Squad::operator=(const Squad& rhs)
+Squad& Squad::operator=(const Squad& inst)
 {
-	if (this != &rhs) {
+	if (this != &inst) {
 		_destroyUnits();
-		_copyUnits(rhs);
-		_n_units = rhs._n_units;
+		_copyUnits(inst);
+		_n_units = inst._n_units;
 	}
 	return *this;
 }

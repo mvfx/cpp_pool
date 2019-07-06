@@ -23,9 +23,9 @@ AssaultTerminator::~AssaultTerminator()
 	std::cout << "I’ll be back ..." << std::endl;
 }
 
-AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator& rhs)
+AssaultTerminator& AssaultTerminator::operator=(const AssaultTerminator& inst)
 {
-	(void)rhs;
+	(void)inst;
 	return *this;
 }
 
